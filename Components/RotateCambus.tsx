@@ -17,10 +17,10 @@ export function RotateCambus() {
   return (
     <View style={styles.cambus}>
       <View style={styles.banner}></View>
-      <ScrollView style={styles.memo}>
+      <View style={styles.memo}>
         {!rotate && <Memo />}
         {rotate && <RotatedMemo />}
-      </ScrollView>
+      </View>
       <View style={styles.button}>
         <Buttons />
       </View>
@@ -38,8 +38,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "#00ffff",
   },
   button: {
-    flex: 1,
-    maxHeight: 30,
+    minHeight: 45,
     bottom: 0,
   },
   banner: { minHeight: 20 },

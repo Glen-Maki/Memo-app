@@ -1,5 +1,5 @@
-import { Button } from "@rneui/themed";
-import { StyleSheet, View, Text } from "react-native";
+import { Button, Icon } from "@rneui/themed";
+import { StyleSheet, View } from "react-native";
 import { useRotate } from "./rotateState";
 
 export const Buttons = () => {
@@ -14,8 +14,12 @@ export const Buttons = () => {
 
   return (
     <View style={styles.box}>
-      <Button title="相手に見せる" size="sm" onPress={rotateState}></Button>
-      <Button title="削除する" size="sm"></Button>
+      <Button size="md" radius="lg" onPress={rotateState}>
+        <Icon name="sync" color="#FFFFFF" />
+      </Button>
+      <Button size="md" radius="lg">
+        <Icon name="delete" color="#FFFFFF" />
+      </Button>
     </View>
   );
 };
