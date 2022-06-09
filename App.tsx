@@ -1,13 +1,13 @@
 import { StyleSheet, View } from "react-native";
 
-import { Provider as PaperProvider } from "react-native-paper";
+import { ThemeProvider } from "@rneui/themed";
 import { RotateCambus } from "./Components/RotateCambus";
 import { RotateProvider } from "./Components/rotateState";
 import { MemoProvider } from "./Components/textState";
 
 export default function App() {
   return (
-    <PaperProvider>
+    <ThemeProvider>
       <MemoProvider>
         <RotateProvider>
           <View style={styles.container}>
@@ -16,7 +16,7 @@ export default function App() {
           </View>
         </RotateProvider>
       </MemoProvider>
-    </PaperProvider>
+    </ThemeProvider>
   );
 }
 

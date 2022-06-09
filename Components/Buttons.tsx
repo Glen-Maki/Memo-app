@@ -1,4 +1,4 @@
-import { Button } from "react-native-paper";
+import { Button } from "@rneui/themed";
 import { StyleSheet, View, Text } from "react-native";
 import { useRotate } from "./rotateState";
 
@@ -14,17 +14,8 @@ export const Buttons = () => {
 
   return (
     <View style={styles.box}>
-      <Button
-        icon="sync"
-        mode="contained"
-        onPress={rotateState}
-        contentStyle={styles.button}
-      >
-        相手に見せる
-      </Button>
-      <Button icon="delete" mode="contained">
-        削除する
-      </Button>
+      <Button title="相手に見せる" size="sm" onPress={rotateState}></Button>
+      <Button title="削除する" size="sm"></Button>
     </View>
   );
 };
@@ -33,8 +24,7 @@ const styles = StyleSheet.create({
   box: {
     flex: 1,
     flexDirection: "row",
-  },
-  button: {
-    height: "auto",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
   },
 });

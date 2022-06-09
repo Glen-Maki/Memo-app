@@ -38,8 +38,9 @@ const styles = StyleSheet.create({
     // backgroundColor: "#00ffff",
   },
   button: {
-    height: 50,
+    flex: 1,
+    maxHeight: 30,
     bottom: 0,
   },
-  banner: { minHeight: 30 },
+  banner: { minHeight: 20 },
 });
