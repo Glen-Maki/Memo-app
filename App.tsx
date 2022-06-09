@@ -1,19 +1,20 @@
 import { StyleSheet, View } from "react-native";
 
-import { Memo } from "./Components/Memo";
 import { Provider as PaperProvider } from "react-native-paper";
 import { RotateCambus } from "./Components/RotateCambus";
-// import SliderText from "./Components/SliderText";
+import { RotateProvider } from "./Components/rotateState";
 import { MemoProvider } from "./Components/textState";
 
 export default function App() {
   return (
     <PaperProvider>
       <MemoProvider>
-        <View style={styles.container}>
-          <RotateCambus />
-          {/*<SliderText />*/}
-        </View>
+        <RotateProvider>
+          <View style={styles.container}>
+            <RotateCambus />
+            {/*<SliderText />*/}
+          </View>
+        </RotateProvider>
       </MemoProvider>
     </PaperProvider>
   );

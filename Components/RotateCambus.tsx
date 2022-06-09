@@ -1,39 +1,28 @@
 import { useState, createContext, useContext } from "react";
-import { StyleSheet, View, Text } from "react-native";
-import { Button } from "react-native-paper";
+import { StyleSheet, View, ScrollView } from "react-native";
+// import { Button } from "react-native-paper";
+import { Buttons } from "./Buttons";
 
 import { Memo } from "./Memo";
 import { RotatedMemo } from "./RotatedMemo";
-import { useText } from "./textState";
+// import { useText } from "./textState";
+import { useRotate } from "./rotateState";
 
 export const MemoContext = createContext<any | undefined>(undefined);
 
 export function RotateCambus() {
-  const [rotate, setRotate] = useState(false);
-  const rotateState = () => {
-    if (rotate) {
-      setRotate(false);
-    } else {
-      setRotate(true);
-    }
-  };
+  // const [rotate, setRotate] = useState(false);
+  const { rotate } = useRotate();
 
   return (
     <View style={styles.cambus}>
       <View style={styles.banner}></View>
-      <View style={styles.memo}>
+      <ScrollView style={styles.memo}>
         {!rotate && <Memo />}
         {rotate && <RotatedMemo />}
-      </View>
-      <View>
-        <Button
-          icon="sync"
-          mode="contained"
-          onPress={rotateState}
-          contentStyle={styles.button}
-        >
-          相手に見せる
-        </Button>
+      </ScrollView>
+      <View style={styles.button}>
+        <Buttons />
       </View>
     </View>
   );
@@ -45,8 +34,12 @@ const styles = StyleSheet.create({
   },
   memo: {
     flex: 1,
+    // position: "absolute",
     // backgroundColor: "#00ffff",
   },
-  button: { height: 50 },
+  button: {
+    height: 50,
+    bottom: 0,
+  },
   banner: { minHeight: 30 },
 });
