@@ -1,5 +1,7 @@
 import { Button, Icon } from "@rneui/themed";
 import { StyleSheet, View } from "react-native";
+
+import { DeleteButton } from "./Button/DeleteButton";
 import { useRotate } from "./rotateState";
 
 export const Buttons = () => {
@@ -17,9 +19,7 @@ export const Buttons = () => {
       <Button size="md" radius="lg" onPress={rotateState}>
         <Icon name="sync" color="#FFFFFF" />
       </Button>
-      <Button size="md" radius="lg">
-        <Icon name="delete" color="#FFFFFF" />
-      </Button>
+      <DeleteButton />
     </View>
   );
 };
