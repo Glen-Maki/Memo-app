@@ -12,7 +12,6 @@ export default function App() {
         <RotateProvider>
           <View style={styles.container}>
             <RotateCambus />
-            {/*<SliderText />*/}
           </View>
         </RotateProvider>
       </MemoProvider>
