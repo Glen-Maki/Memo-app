@@ -1,14 +1,16 @@
 import React, { useState, useContext } from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, ScrollView } from "react-native";
 
 import { useText } from "./textState";
 
 export function RotatedMemo() {
   const { text } = useText();
   return (
-    <View style={[styles.memoView, { transform: [{ rotate: "180deg" }] }]}>
+    <ScrollView
+      style={[styles.memoView, { transform: [{ rotate: "180deg" }] }]}
+    >
       <Text style={styles.rotateMemo}>{text}</Text>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -17,6 +19,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   memoView: {
+    top: 0,
     flex: 1,
   },
 });
